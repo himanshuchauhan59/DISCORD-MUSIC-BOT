@@ -1,8 +1,10 @@
 const { REST, Routes } = require('discord.js');
 require("dotenv").config();
+const { LIST_MUSIC, GETTING_LIST } = require("./commands/listMusic.commands")
 const { PING_MESSAGE, PING_EXECUTE } = require("./commands/ping.commands")
 
 const commands = [];
+commands.push(LIST_MUSIC.toJSON());
 commands.push(PING_MESSAGE.toJSON());
 const rest = new REST().setToken(process.env.CLIENT_TOKEN);
 // and deploy your commands!
